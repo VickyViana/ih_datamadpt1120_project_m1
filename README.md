@@ -3,16 +3,9 @@ Ironhack Madrid - Data Analytics Part Time - November 2020 - Project Module 1
 
 The purpose of this project is to archive a resumed information about employed people in European countries that have jobs related with Data analysis. The results obtained are presented in a dataframe, and consist of percentages of how many people work in each different job position, separated by gender and country. These results can be calculated for a particular country or for all at a time.
 
-<p align="center">
-<img src="https://image.shutterstock.com/image-vector/illustration-long-shadow-european-union-600w-578166688.jpg">
-</p>
 
 <p align="center">
-<img src="https://www.pecklaw.com/wp-content/uploads/2020/08/Connections-1000x675.jpg">
-</p>
-<p align="center">
-<img src="
-https://1.cms.s81c.com/sites/default/files/2019-01-30/1_Cloud-EU-data-responsibility.jpg">
+<img src="https://1.cms.s81c.com/sites/default/files/2019-01-30/1_Cloud-EU-data-responsibility.jpg">
 </p>
 
 
