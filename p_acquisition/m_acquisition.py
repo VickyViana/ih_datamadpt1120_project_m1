@@ -2,7 +2,6 @@
 
 import pandas as pd
 from sqlalchemy import create_engine
-import quandl
 import requests
 from bs4 import BeautifulSoup
 
