@@ -29,3 +29,9 @@ def country_selector(table, country):
     filter_country = table['Country'] == country
     table = table[filter_country]
     return table
+
+
+def group_mean(table):
+    table_grouped = table.groupby('Position')[['Number of Pro Arguments', 'Number of Cons Arguments']].mean().astype(int)
+    return table_grouped
+

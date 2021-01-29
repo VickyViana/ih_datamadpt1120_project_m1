@@ -13,7 +13,7 @@ def gender_unify(column_g):  # Function to unify the gender results in only two:
         return 'Male'
 
 
-def clean_gender(table, gender):  # Function to clean column "gender" in df_personal_info
+def clean_gender(table):  # Function to clean column "gender" in df_personal_info
     table['gender'] = table.apply(lambda x: gender_unify(x['gender']), axis=1)
     return table
 
@@ -85,4 +85,39 @@ def rename_col(df, name_dict):  # Function that changes the name of a column in 
 def join_tables(tables_dic):
     table_complete = reduce(lambda left, right: pd.merge(left, right, on='uuid'), tables_dic.values())
     return table_complete
+
+
+def filter_novote(df, column):
+    filt_novote = df[column] != 'I would not vote'
+    df_voters = df[filt_novote]
+    return df_voters
+
+
+def count_sep(df, column_to_count, new_col):
+    df.loc[df[column_to_count] == 'None of the above', new_col] = 0
+    df.loc[df[column_to_count] != 'None of the above', new_col] = df[column_to_count].str.count('\|') + 1
+    return df
+
+
+def position_unify(column_pos):
+    if column_pos.endswith('against it'):
+        return 'Against'
+    else:
+        return 'In Favor'
+
+
+def clean_position(df):  # Function to clean column "Position"
+    df['Position'] = df['Position'].apply(position_unify)
+    return df
+
+
+def table_pos(df):
+    pd.options.mode.chained_assignment = None  # default='warn'
+    col_dic = {'question_bbi_2016wave4_basicincome_vote': 'Position'}
+    df = rename_col(df, col_dic)
+    table_voters = filter_novote(df, 'Position')
+    table_voters_pos = clean_position(table_voters)
+    table_voters_pro = count_sep(table_voters_pos, 'question_bbi_2016wave4_basicincome_argumentsfor', 'Number of Pro Arguments')
+    table_voters_complete = count_sep(table_voters_pro, 'question_bbi_2016wave4_basicincome_argumentsagainst', 'Number of Cons Arguments')
+    return table_voters_complete
 
