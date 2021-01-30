@@ -1,6 +1,8 @@
 # ih_datamadpt1120_project_m1
 Ironhack Madrid - Data Analytics Part Time - January 2021 - Project Module 1
 
+
+## **European data workers**
 The purpose of this project is to archive a resumed information about employed people in European countries that have jobs related with data analysis. The results obtained are presented in a dataframe, and consist of percentages of how many people work in each different job position, separated by gender and country. These results can be calculated for a particular country or for all at a time. 
 
 An extra bonus information can be obtained, related to the opinion of each worker about basic income. An average of pro arguments and cons arguments will be shown for people with position in favour or against it. This outcome will be with regard of the country chosen in the begining (or all countries). 

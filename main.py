@@ -85,8 +85,6 @@ def main(argument, argument2):
         print('Process completed')
 
 
-
-
 if __name__ == '__main__':
     main(argument_parser().country, argument_parser().bonus1)
 
